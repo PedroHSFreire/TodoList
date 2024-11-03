@@ -1,0 +1,29 @@
+.div-bottons {
+  max-width: 300px;
+  margin: 0rem auto;
+}
+
+.log {
+  margin-left: 10%;
+  padding: 1rem;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(139, 139, 226);
+  cursor: pointer;
+  font-weight: 600;
+}
+.profile {
+  max-width: 300px;
+  margin: 5rem auto;
+}
+img {
+  border-radius: 100px;
+  margin-left: 30%;
+}
+.dados {
+  display: flex;
+  width: 400px;
+  gap: 30px;
+  margin-left: -1.5rem;
+}

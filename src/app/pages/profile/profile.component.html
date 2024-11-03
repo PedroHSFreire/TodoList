@@ -1,0 +1,17 @@
+@if(profile){
+<!--perfil-->
+<div class="div-bottons">
+  <button class="log" (click)="logout()">Logout</button>
+  <button class="log" [routerLink]="['/lista']">Lista</button>
+</div>
+<div class="profile">
+  <img [src]="profile.picture" alt="{{ profile.name }}" />
+  <div class="dados">
+    <p><strong>Nome:</strong> {{ profile.name }}</p>
+    <p>
+      <strong>Email:</strong>
+      {{ profile.email }}
+    </p>
+  </div>
+</div>
+}

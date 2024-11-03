@@ -2,43 +2,11 @@
   <h1>Bem Vindo!</h1>
   <div class="botoes">
     <button class="log" (click)="login()">Login</button>
-    <button class="log" (click)="logout()">Logout</button>
+    <div style="display: flex">
+      @if(profile){
+      <button class="log" [routerLink]="['/lista']">Lista</button>
+      <button class="log" [routerLink]="['/profile']">Lista</button>
+      }
+    </div>
   </div>
 </header>
-<div>
-  @if(profile){
-  <!--perfil-->
-  <div class="profile">
-    <img [src]="profile.picture" alt="{{ profile.name }}" />
-    <div class="dados">
-      <p><strong>Nome:</strong> {{ profile.name }}</p>
-      <p>
-        <strong>Email:</strong>
-        {{ profile.email }}
-      </p>
-    </div>
-  </div>
-  <!--lista-->
-  <div class="todo-container">
-    <h2>Lista de Tarefas</h2>
-    <div class="input-group">
-      <input [(ngModel)]="newTodo" placeholder="Adicionar nova tarefa" />
-      <button class="add" (click)="addTodo()">Adicionar</button>
-    </div>
-
-    <ul>
-      <li *ngFor="let todo of todos">
-        <div class="todo-item">
-          <span
-            [class.completed]="todo.completed"
-            (click)="toggleCompletion(todo)"
-          >
-            {{ todo.title }}
-          </span>
-          <button class="remove" (click)="removeTodo(todo.id)">Remover</button>
-        </div>
-      </li>
-    </ul>
-  </div>
-  }
-</div>
