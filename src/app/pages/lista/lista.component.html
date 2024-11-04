@@ -4,22 +4,24 @@
 </div>
 <div class="todo-container">
   <h2>Lista de Tarefas</h2>
-  <div class="input-group">
-    <input [(ngModel)]="newTodo" placeholder="Adicionar nova tarefa" />
-    <button class="add" (click)="addTodo()">Adicionar</button>
-  </div>
-
+  <input
+    class="theinput"
+    [(ngModel)]="newTaskTitle"
+    placeholder="Nova tarefa"
+  />
+  <button class="log" (click)="addTask()">Adicionar</button>
   <ul>
-    <li *ngFor="let todo of todos">
-      <div class="todo-item">
-        <span
-          [class.completed]="todo.completed"
-          (click)="toggleCompletion(todo)"
-        >
-          {{ todo.title }}
-        </span>
-        <button class="remove" (click)="removeTodo(todo.id)">Remover</button>
-      </div>
+    <li *ngFor="let task of tasks">
+      <input
+        class="cheked"
+        type="checkbox"
+        [checked]="task.completed"
+        (change)="toggleCompletion(task)"
+      />
+      <p>{{ task.title }}</p>
+
+      <button class="remove" (click)="removeTask(task.id!)">Excluir</button>
+      @for(product of tasks; track product.id){ }
     </li>
   </ul>
 </div>

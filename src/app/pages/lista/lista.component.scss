@@ -15,11 +15,16 @@
   gap: 40px;
   position: static;
 }
-.input-group input {
-  width: 300px;
+.theinput {
+  width: 250px;
   height: 2rem;
   border-radius: 20px;
   border-color: lightgray;
+}
+.cheked {
+  border-radius: 10px;
+  width: 15px;
+  border: none;
 }
 .input-group .add {
   border-radius: 20px;
@@ -32,6 +37,8 @@ ul {
 }
 ul li {
   list-style: none;
+  display: flex;
+  gap: 20px;
 }
 .remove {
   justify-content: flex-end;
@@ -49,12 +56,17 @@ ul li {
   padding: 0.5rem;
 }
 .remove {
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   background-color: red;
-  padding: 0.5rem;
   justify-content: flex-end;
   font-weight: 700;
+  width: 70px;
+  height: 30px;
+  margin-top: 0.5rem;
+}
+p {
+  display: flex;
 }
 .log {
   margin-left: 10%;

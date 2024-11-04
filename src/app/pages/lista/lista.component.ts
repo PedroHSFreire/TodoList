@@ -1,47 +1,67 @@
-import { AsyncPipe, CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { AuthService } from '@auth0/auth0-angular';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { AuthService } from '@auth0/auth0-angular';
+import { Task, TaskService } from '../service/task.service';
+
 @Component({
   selector: 'app-lista',
   standalone: true,
-  imports: [CommonModule, AsyncPipe, FormsModule, RouterLink, RouterOutlet],
+  imports: [CommonModule, FormsModule, RouterLink, RouterOutlet],
   templateUrl: './lista.component.html',
-  styleUrl: './lista.component.scss',
+  styleUrls: ['./lista.component.scss'],
 })
-export class ListaComponent {
-  constructor(public auth: AuthService) {}
-  todos: Todo[] = [];
-  newTodo: string = '';
+export class ListaComponent implements OnInit {
+  tasks: Task[] = [];
+  newTaskTitle: string = '';
 
-  addTodo() {
-    if (this.newTodo.trim()) {
-      const newTask: Todo = {
-        id: Date.now(),
-        title: this.newTodo,
+  constructor(public auth: AuthService, private taskService: TaskService) {}
+
+  ngOnInit(): void {
+    //this.loadTasks();
+    this.taskService.getTasks().subscribe((dado) => {
+      this.tasks = dado;
+      console.log(dado);
+    });
+  }
+
+  loadTasks(): void {
+    this.taskService.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
+  }
+
+  addTask() {
+    if (this.newTaskTitle.trim()) {
+      const newTask: Task = {
+        title: this.newTaskTitle,
         completed: false,
+        included: true,
       };
-      this.todos = [...this.todos, newTask];
-      this.newTodo = '';
+
+      this.taskService.createTask(newTask).subscribe((task) => {
+        this.tasks.push(task);
+        this.newTaskTitle = '';
+      });
     }
   }
 
-  toggleCompletion(todo: Todo) {
-    todo.completed = !todo.completed;
+  toggleCompletion(task: Task): void {
+    task.completed = !task.completed;
+    this.taskService.updateTaskStatus(task.id!, task.completed).subscribe();
   }
 
-  removeTodo(id: number) {
-    this.todos = this.todos.filter((todo) => todo.id !== id);
+  removeTask(id: number): void {
+    this.taskService.deleteTask(id).subscribe(() => {
+      this.tasks = this.tasks.filter((task) => task.id !== id);
+    });
   }
-  logout() {
+
+  logout(): void {
     this.auth.logout({
       logoutParams: { returnTo: window.location.origin },
     });
   }
-}
-export interface Todo {
-  id: number;
-  title: string;
-  completed: boolean;
 }

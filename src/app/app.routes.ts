@@ -17,4 +17,5 @@ export const routes: Routes = [
     canActivate: [navbarGuard],
   },
   { path: '', component: LoginComponent },
+  { path: '**', component: ListaComponent },
 ];
