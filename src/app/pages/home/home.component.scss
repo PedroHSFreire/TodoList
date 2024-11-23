@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Grey+Qo&family=Inconsolata:wght@200..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 445px) {
+  h1 {
+    display: flex;
+    font-family: "Inconsolata", monospace;
+  }
+  .tube {
+    color: red;
+    font-family: "Inconsolata", monospace;
+  }
+  h2 {
+    font-family: "Inconsolata", monospace;
+  }
+  p {
+    font-family: "Inconsolata", monospace;
+  }
+  .Title {
+    color: red;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    gap: 16px;
+  }
+  .img-card1 {
+    border-radius: 20px;
+  }
+  .img-card {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .video-card2 {
+    padding: 0.5rem;
+  }
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+
+    scroll-behavior: smooth;
+  }
+  .views {
+    display: flex;
+    gap: 20px;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 100;
+
+    &.prev-btn {
+      left: 10px;
+    }
+
+    &.next-btn {
+      right: 10px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+  .div-buttons {
+    position: relative;
+  }
+}
+@media only screen and (min-width: 800px) {
+  h1 {
+    display: flex;
+  }
+  .tube {
+    color: red;
+  }
+  .Title {
+    color: red;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    gap: 16px;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-behavior: smooth;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .views {
+    display: flex;
+    gap: 150px;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 100;
+
+    &.prev-btn {
+      left: 10px;
+    }
+
+    &.next-btn {
+      right: 10px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}

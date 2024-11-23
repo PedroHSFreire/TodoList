@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideRouter, RouterModule } from '@angular/router';
 import {
   provideHttpClient,
@@ -10,7 +10,7 @@ import {
 import { routes } from './app.routes';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule],
+  imports: [BrowserModule, FormsModule, RouterModule, BrowserAnimationsModule],
   providers: [
     provideRouter(routes),
     provideHttpClient(withInterceptorsFromDi()),

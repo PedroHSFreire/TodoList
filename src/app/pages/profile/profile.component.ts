@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { AuthService, User } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterLink],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })

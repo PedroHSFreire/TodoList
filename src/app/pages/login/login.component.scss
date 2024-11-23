@@ -1,43 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Grey+Qo&family=Inconsolata:wght@200..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
+@media only screen and (max-width: 445px) {
+  .container-header {
+    margin: 40% 20%;
+  }
+  h1 {
+    margin-left: 15%;
+    display: flex;
+    font-family: "Inconsolata", monospace;
+    font-size: 40px;
+  }
+  p {
+    color: red;
+    font-family: "Inconsolata", monospace;
+  }
+  .log {
+    margin-top: 13rem;
+    margin-right: -4rem;
+    padding: 1rem;
+    width: 240px;
+    border: none;
+    border-radius: 10px;
+    background-color: red;
+    cursor: pointer;
+    font-weight: 600;
+  }
 
-.container-header {
-  display: flex;
-  width: 100%;
-  padding: 1rem;
-  background-color: whitesmoke;
-  border-radius: 20px;
+  img {
+    border-radius: 100px;
+    margin-left: 11%;
+  }
+  .dados {
+    display: flex;
+    gap: 40px;
+  }
 }
-h1 {
-  margin-left: 3%;
-}
-.botoes {
-  display: flex;
-  margin-left: 65%;
-}
-.log {
-  margin-left: 10%;
-  padding: 1rem;
-  width: 100px;
-  border: none;
-  border-radius: 20px;
-  background-color: rgb(139, 139, 226);
-  cursor: pointer;
-  font-weight: 600;
-}
-.profile {
-  margin: 0 auto;
-  margin-left: 40%;
-}
-img {
-  border-radius: 100px;
-  margin-left: 11%;
-}
-.dados {
-  display: flex;
-  gap: 40px;
+@media only screen and (min-width: 800px) {
+  .container-header {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 20px;
+  }
+  h1 {
+    margin-left: 3%;
+    display: flex;
+    font-family: "Inconsolata", monospace;
+  }
+  p {
+    color: red;
+    font-family: "Inconsolata", monospace;
+  }
+  .botoes {
+    display: flex;
+    margin-left: 65%;
+  }
+  .log {
+    margin-left: 10%;
+    padding: 1rem;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(139, 139, 226);
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .profile {
+    margin: 0 auto;
+    margin-left: 40%;
+  }
+  img {
+    border-radius: 100px;
+    margin-left: 11%;
+  }
+  .dados {
+    display: flex;
+    gap: 40px;
+  }
 }
 
 //Lista

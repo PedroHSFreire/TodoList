@@ -1,0 +1,59 @@
+<header>
+  <h1>
+    VOCE
+    <p class="tube">TUBE</p>
+  </h1>
+</header>
+<h3 class="Title">Mais vistos</h3>
+<!--primeira linha-->
+<section class="explorar">
+  <div class="carousel-container">
+    <button
+      class="carousel-btn prev-btn"
+      (click)="scrollLeft()"
+      aria-label="Scroll left"
+    >
+      &#10094;
+    </button>
+    <div class="carousel">
+      <div *ngFor="let video of tasks" class="video-card">
+        <a [href]="video.url" target="_blank"
+          ><img
+            class="img-card1"
+            [src]="video.thumbnail"
+            alt="{{ video.title }}"
+        /></a>
+        <h2>{{ video.title }}</h2>
+        <p>{{ video.description }}</p>
+        <div class="views">
+          <p>Views: {{ video.views | number }}</p>
+          <p>Uploaded At: {{ video.uploadedAt | date }}</p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-btn next-btn"
+      (click)="scrollRight()"
+      aria-label="Scroll right"
+    >
+      &#10095;
+    </button>
+  </div>
+</section>
+<section>
+  <div *ngFor="let video of tasks" class="video-card2">
+    <a [href]="video.url" target="_blank"
+      ><img class="img-card" [src]="video.thumbnail" alt="{{ video.title }}"
+    /></a>
+    <h2>{{ video.title }}</h2>
+    <p>{{ video.description }}</p>
+    <div class="views">
+      <p>Views: {{ video.views | number }}</p>
+      <p>Uploaded At: {{ video.uploadedAt | date }}</p>
+    </div>
+  </div>
+</section>
+<footer class="div-buttons">
+  <button class="log" (click)="logout()">Logout</button>
+  <button class="log" [routerLink]="['/profile']">Profile</button>
+</footer>

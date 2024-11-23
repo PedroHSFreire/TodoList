@@ -5,6 +5,11 @@ import { Observable } from 'rxjs';
 export interface Task {
   id?: number;
   title: string;
+  description: string;
+  url: string;
+  thumbnail: string;
+  views: number;
+  uploadedAt: string;
   completed: boolean;
   included: boolean;
 }
@@ -13,7 +18,7 @@ export interface Task {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:3000/Tarefa';
+  private apiUrl = 'http://localhost:3000/videos';
 
   constructor(private http: HttpClient) {}
 
