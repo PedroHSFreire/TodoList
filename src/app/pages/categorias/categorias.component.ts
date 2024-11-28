@@ -8,15 +8,14 @@ import { ApiService, Task } from '../service/api.service';
 import { debounceTime, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-lista',
+  selector: 'app-categorias',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './categorias.component.html',
+  styleUrl: './categorias.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class CategoriasComponent implements OnInit {
   private searchSubject = new Subject<string>();
   users: any[] = [];
   videos: Task[] = [];

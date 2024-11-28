@@ -1,0 +1,22 @@
+.logo {
+  display: flex;
+}
+h1 {
+  font-family: "Inconsolata", monospace;
+}
+.tube {
+  color: red;
+  font-family: "Inconsolata", monospace;
+}
+.video-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Infos {
+  display: flex;
+  gap: 40px;
+}
+.no-video {
+  text-align: center;
+}

@@ -1,0 +1,28 @@
+<header>
+  <div class="logo">
+    <h1>VOCE</h1>
+    <h1 class="tube">TUBE</h1>
+  </div>
+</header>
+
+<div class="video-player" *ngIf="selectedVideo">
+  <iframe
+    *ngIf="getYouTubeEmbedUrl()"
+    [src]="getYouTubeEmbedUrl() | safeUrl"
+    width="640"
+    height="360"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+  <div class="title">
+    <h2>{{ selectedVideo.title }}</h2>
+  </div>
+  <div class="Infos">
+    <p>Views: {{ selectedVideo.views | number }}</p>
+    <p>Uploaded At: {{ selectedVideo.uploadedAt | date }}</p>
+  </div>
+  <p>{{ selectedVideo.description }}</p>
+</div>
+
+<p *ngIf="!selectedVideo">Nenhum vídeo selecionado.</p>

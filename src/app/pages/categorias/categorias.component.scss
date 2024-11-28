@@ -129,8 +129,7 @@
     }
   }
 }
-
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 800px) {
   /*header*/
   header {
     display: flex;
@@ -139,13 +138,9 @@
     display: flex;
     margin-left: 48%;
   }
-  .pesquisa {
-    margin-left: 20%;
-  }
   body {
     padding: 1rem;
   }
-
   h1 {
     display: flex;
   }
@@ -158,39 +153,18 @@
     margin-bottom: 1rem;
     text-align: center;
   }
-  .search-bar {
-    display: flex;
-    margin-left: 10%;
-  }
-  input {
-    font-size: 16px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border: ridge;
-    width: 300px;
-    padding: 0.7rem;
-    font-family: "Inconsolata", monospace;
-  }
-  .search-button {
-    padding: 0.7rem;
-    background-color: red;
-    border: none;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    font-family: "Inconsolata", monospace;
-  }
   .menu-container {
-    margin-left: 70%;
+    margin-left: 85%;
     position: absolute;
     cursor: pointer;
   }
   .header-buttons {
     padding: 10px;
-    border-radius: 50px;
     display: flex;
-    background-color: grey;
   }
-
+  .header-buttons:hover {
+    border-bottom: solid;
+  }
   .menu {
     position: relative;
     width: 100px;
@@ -228,13 +202,7 @@
     overflow: hidden;
     gap: 16px;
   }
-  .img-card1 {
-    border-radius: 20px;
-  }
-  .img-card {
-    width: 100%;
-    border-radius: 20px;
-  }
+
   .carousel {
     display: flex;
     overflow-x: auto;

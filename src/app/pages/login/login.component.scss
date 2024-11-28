@@ -40,32 +40,39 @@
 }
 @media only screen and (min-width: 800px) {
   .container-header {
-    display: flex;
-    width: 100%;
+    display: block;
+    width: 30%;
     padding: 1rem;
-    background-color: whitesmoke;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35%;
+    margin-top: 200px;
+    height: 600px;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    box-shadow: 5px 4px 4px #9b9b9b;
   }
   h1 {
-    margin-left: 3%;
+    margin-left: 40%;
     display: flex;
     font-family: "Inconsolata", monospace;
+    margin-top: 100px;
   }
   p {
     color: red;
     font-family: "Inconsolata", monospace;
   }
-  .botoes {
-    display: flex;
-    margin-left: 65%;
-  }
+
   .log {
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-top: 200px;
     padding: 1rem;
-    width: 100px;
+    width: 65%;
     border: none;
     border-radius: 20px;
-    background-color: rgb(139, 139, 226);
+    background-color: red;
     cursor: pointer;
     font-weight: 600;
   }

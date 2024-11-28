@@ -1,0 +1,163 @@
+<header>
+  <div>
+    <h1>
+      VOCE
+      <p class="tube">TUBE</p>
+    </h1>
+  </div>
+  <div>
+    <input
+      type="text"
+      placeholder="Pesquise pelo título"
+      (input)="onSearch($event)"
+    />
+    <ul *ngIf="results.length > 0">
+      <li *ngFor="let item of results">{{ item.title }}</li>
+    </ul>
+    <p *ngIf="results.length === 0 && searchPerformed">
+      Nenhum resultado encontrado.
+    </p>
+  </div>
+  <div class="menu-container">
+    <div (click)="toggleMenu()" class="header-buttons">
+      <h3>menu</h3>
+      <img
+        class="arrow"
+        [style.transform]="isRotated ? 'rotate(180deg)' : 'rotate(0deg)'"
+        [style.transition]="'transform 0.0s ease'"
+        (click)="toggleRotation()"
+        src="/assets/imagens/icons8-maior-que-100.png"
+      />
+    </div>
+    <div class="menu" *ngIf="isMenuOpen">
+      <button class="log" [routerLink]="['/profile']">Profile</button>
+      <button class="log" [routerLink]="['/Home']">Categoria</button>
+
+      <button class="logout" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</header>
+
+<!--primeira linha-->
+<body>
+  <h3 class="Title">Mais Vistos</h3>
+  <div></div>
+  <div>
+    <section class="explorar">
+      <div class="carousel-container">
+        <button
+          class="carousel-btn prev-btn"
+          (click)="scrollLeft('carousel1')"
+          aria-label="Scroll left"
+        >
+          &#10094;
+        </button>
+        <div class="carousel" id="carousel1">
+          <div *ngFor="let video of videos" class="video-card">
+            <div
+              (click)="playVideo(video)"
+              [routerLink]="['/player']"
+              target="_blank"
+            >
+              <img
+                (click)="incrementViews(video)"
+                class="img-card1"
+                [src]="video.thumbnail"
+                alt="{{ video.title }}"
+              />
+            </div>
+            <h2>{{ video.title }}</h2>
+            <p>{{ video.description }}</p>
+            <div class="views">
+              <p>Views: {{ video.views | number }}</p>
+              <p>Uploaded At: {{ video.uploadedAt | date }}</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-btn next-btn"
+          (click)="scrollRight('carousel1')"
+          aria-label="Scroll right"
+        >
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div class="carousel-container">
+        <button
+          class="carousel-btn prev-btn"
+          (click)="scrollLeft('carousel2')"
+          aria-label="Scroll left"
+        >
+          &#10094;
+        </button>
+        <div *ngFor="let video of videos" class="video-card">
+          <div (click)="incrementViews(video)" (click)="playVideo(video)">
+            <img
+              class="img-card1"
+              [src]="video.thumbnail"
+              alt="{{ video.title }}"
+            />
+            <h2>{{ video.title }}</h2>
+            <p>{{ video.description }}</p>
+            <div class="views">
+              <p>Views: {{ video.views | number }}</p>
+              <p>Uploaded At: {{ video.uploadedAt | date }}</p>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-btn next-btn"
+          (click)="scrollRight('carousel2')"
+          aria-label="Scroll right"
+        >
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div class="carousel-container">
+        <button
+          class="carousel-btn prev-btn"
+          (click)="scrollLeft('carousel3')"
+          aria-label="Scroll left"
+        >
+          &#10094;
+        </button>
+        <div class="carousel" id="carousel3">
+          <div *ngFor="let video of videos" class="video-card">
+            <div
+              (click)="playVideo(video)"
+              [routerLink]="['/player']"
+              target="_blank"
+            >
+              <img
+                (click)="incrementViews(video)"
+                class="img-card1"
+                [src]="video.thumbnail"
+                alt="{{ video.title }}"
+              />
+            </div>
+            <h2>{{ video.title }}</h2>
+            <p>{{ video.description }}</p>
+            <div class="views">
+              <p>Views: {{ video.views | number }}</p>
+              <p>Uploaded At: {{ video.uploadedAt | date }}</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-btn next-btn"
+          (click)="scrollRight('carousel3')"
+          aria-label="Scroll right"
+        >
+          &#10095;
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
