@@ -6,17 +6,14 @@
     </h1>
   </div>
   <div class="pesquisa">
-    <input
-      type="text"
-      placeholder="Pesquise pelo título"
-      (input)="onSearch($event)"
-    />
-    <ul *ngIf="results.length > 0">
-      <li *ngFor="let item of results">{{ item.title }}</li>
-    </ul>
-    <p *ngIf="results.length === 0 && searchPerformed">
-      Nenhum resultado encontrado.
-    </p>
+    <div>
+      <input
+        type="text"
+        placeholder="Digite o título do vídeo"
+        [(ngModel)]="searchQuery"
+      />
+      <button class="search" (click)="search()">Pesquisar</button>
+    </div>
   </div>
   <div class="menu-container">
     <div (click)="toggleMenu()" class="header-buttons">
@@ -31,7 +28,7 @@
     </div>
     <div class="menu" *ngIf="isMenuOpen">
       <button class="log" [routerLink]="['/profile']">Profile</button>
-      <button class="log" [routerLink]="['/Categorias']">Categoria</button>
+      <button class="log" [routerLink]="['/Favoritos']">Favoritos</button>
       <button class="logout" (click)="logout()">Logout</button>
     </div>
   </div>

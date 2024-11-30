@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-
+import { switchMap, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
 export interface Task {
   id?: number;
   title: string;
@@ -41,7 +42,15 @@ export class ApiService {
   }
 
   getFavorites(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/favorites`);
+    return this.http.get<any[]>(`${this.apiUrl}/favorites`).pipe(
+      map((favorites) =>
+        favorites.map((video) => ({
+          ...video,
+          views: video.views || 'Sem informações',
+          uploadedAt: video.uploadedAt || null,
+        }))
+      )
+    );
   }
 
   searchItems(query: string): Observable<any[]> {
@@ -54,5 +63,33 @@ export class ApiService {
   }
   selectVideo(video: Task): void {
     this.selectedVideoSubject.next(video);
+  }
+  addToFavorites(video: any): Observable<any> {
+    return this.getFavorites().pipe(
+      switchMap((favorites) => {
+        const exists = favorites.some((fav: any) => fav.id === video.id);
+        if (exists) {
+          return throwError(() => new Error('Vídeo já está nos favoritos'));
+        }
+        return this.http.post<any>(`${this.apiUrl}/favorites`, video);
+      })
+    );
+  }
+  searchByTitle(title: string): Observable<any | undefined> {
+    return this.http
+      .get<any[]>(`${this.apiUrl}/videos`)
+      .pipe(
+        map((videos) =>
+          videos.find(
+            (video) =>
+              video.title.toLowerCase().trim() === title.toLowerCase().trim()
+          )
+        )
+      );
+  }
+  getVideoById(id: string): Observable<any> {
+    return this.http
+      .get<any[]>(`${this.apiUrl}/videos`)
+      .pipe(map((videos) => videos.find((video) => video.id === id)));
   }
 }

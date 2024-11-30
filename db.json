@@ -23,7 +23,7 @@
       "description": "The official video for “Never Gonna Give You Up” by Rick Astley",
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
-      "views": 1200000023,
+      "views": 1200000036,
       "uploadedAt": "2009-10-25T07:57:33Z"
     },
     {
@@ -32,7 +32,7 @@
       "description": "Mark Ronson's official music video for 'Uptown Funk' ft. Bruno Mars.",
       "url": "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
       "thumbnail": "https://i.ytimg.com/vi/3JZ_D3ELwOQ/hqdefault.jpg",
-      "views": 4000000009,
+      "views": 4000000020,
       "uploadedAt": "2014-11-19T20:00:11Z"
     },
     {
@@ -41,7 +41,7 @@
       "description": "The official music video for Smash Mouth's hit song 'All Star'.",
       "url": "https://www.youtube.com/watch?v=L_jWHffIx5E",
       "thumbnail": "https://i.ytimg.com/vi/L_jWHffIx5E/hqdefault.jpg",
-      "views": 300000003,
+      "views": 300000016,
       "uploadedAt": "2009-06-16T00:00:00Z"
     },
     {
@@ -50,7 +50,7 @@
       "description": "Videoclipe oficial de 'Hear Me Now' por Alok, Zeeba e Bruno Martini.",
       "url": "https://www.youtube.com/watch?v=JVpTp8IHdEg",
       "thumbnail": "https://i.ytimg.com/vi/JVpTp8IHdEg/hqdefault.jpg",
-      "views": 400000001,
+      "views": 400000002,
       "uploadedAt": "2016-11-03T12:00:00Z"
     },
     {
@@ -59,7 +59,7 @@
       "description": "A clip from Buck Privates from my VHS Tapes file. I do not own the rights, but love the movie.",
       "url": "https://www.youtube.com/watch?v=8of3uhG1tCI",
       "thumbnail": "https://i.ytimg.com/vi/8of3uhG1tCI/hqdefault.jpg",
-      "views": 18263726,
+      "views": 18263727,
       "uploadedAt": "2015-01-13T12:00:00Z"
     },
     {
@@ -68,7 +68,7 @@
       "description": "Videoclipe oficial de 'Hey Jude' dos The Beatles.",
       "url": "https://www.youtube.com/watch?v=A_MjCqQoLLA",
       "thumbnail": "https://i.ytimg.com/vi/A_MjCqQoLLA/hqdefault.jpg",
-      "views": 250000000,
+      "views": 250000001,
       "uploadedAt": "2015-10-02T00:00:00Z"
     },
     {
@@ -260,6 +260,60 @@
       "userId": 2,
       "videoId": 2,
       "id": "1e45"
+    },
+    {
+      "id": "1",
+      "title": "Rick Astley - Never Gonna Give You Up (Official Music Video)",
+      "description": "The official video for “Never Gonna Give You Up” by Rick Astley",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "views": 1200000036,
+      "uploadedAt": "2009-10-25T07:57:33Z"
+    },
+    {
+      "id": "5",
+      "title": "Alok, Zeeba e Bruno Martini - Hear Me Now (Official Music Video)",
+      "description": "Videoclipe oficial de 'Hear Me Now' por Alok, Zeeba e Bruno Martini.",
+      "url": "https://www.youtube.com/watch?v=JVpTp8IHdEg",
+      "thumbnail": "https://i.ytimg.com/vi/JVpTp8IHdEg/hqdefault.jpg",
+      "views": 400000001,
+      "uploadedAt": "2016-11-03T12:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Smash Mouth - All Star (Official Music Video)",
+      "description": "The official music video for Smash Mouth's hit song 'All Star'.",
+      "url": "https://www.youtube.com/watch?v=L_jWHffIx5E",
+      "thumbnail": "https://i.ytimg.com/vi/L_jWHffIx5E/hqdefault.jpg",
+      "views": 300000003,
+      "uploadedAt": "2009-06-16T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Mark Ronson - Uptown Funk (Official Video) ft. Bruno Mars",
+      "description": "Mark Ronson's official music video for 'Uptown Funk' ft. Bruno Mars.",
+      "url": "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+      "thumbnail": "https://i.ytimg.com/vi/3JZ_D3ELwOQ/hqdefault.jpg",
+      "views": 4000000011,
+      "uploadedAt": "2014-11-19T20:00:11Z"
+    },
+    {
+      "id": "6",
+      "title": "Andrews Sisters Boogie Woogie Bugle Boy",
+      "description": "A clip from Buck Privates from my VHS Tapes file. I do not own the rights, but love the movie.",
+      "url": "https://www.youtube.com/watch?v=8of3uhG1tCI",
+      "thumbnail": "https://i.ytimg.com/vi/8of3uhG1tCI/hqdefault.jpg",
+      "views": 18263727,
+      "uploadedAt": "2015-01-13T12:00:00Z"
+    },
+    {
+      "id": "7",
+      "title": "The Beatles - Hey Jude",
+      "description": "Videoclipe oficial de 'Hey Jude' dos The Beatles.",
+      "url": "https://www.youtube.com/watch?v=A_MjCqQoLLA",
+      "thumbnail": "https://i.ytimg.com/vi/A_MjCqQoLLA/hqdefault.jpg",
+      "views": 250000001,
+      "uploadedAt": "2015-10-02T00:00:00Z"
     }
   ]
 }

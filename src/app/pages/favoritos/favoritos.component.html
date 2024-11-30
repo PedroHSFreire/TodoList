@@ -1,0 +1,52 @@
+<header>
+  <div>
+    <h1>
+      VOCE
+      <p class="tube">TUBE</p>
+    </h1>
+  </div>
+
+  <div class="menu-container">
+    <div (click)="toggleMenu()" class="header-buttons">
+      <h3 class="txt-dropdown" (click)="toggleRotation()">menu</h3>
+      <img
+        class="arrow"
+        [style.transform]="isRotated ? 'rotate(180deg)' : 'rotate(0deg)'"
+        [style.transition]="'transform 0.0s ease'"
+        (click)="toggleRotation()"
+        src="/assets/imagens/icons8-maior-que-100.png"
+      />
+    </div>
+    <div class="menu" *ngIf="isMenuOpen">
+      <button class="log" [routerLink]="['/profile']">Profile</button>
+      <button class="log" [routerLink]="['/Home']">Home</button>
+      <button class="logout" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</header>
+<body>
+  <div class="videos-container" *ngIf="favorites.length > 0; else noFavorites">
+    <h2>Vídeos Favoritos</h2>
+    <div class="video-card" *ngFor="let video of favorites">
+      <div (click)="playVideo(video)">
+        <img
+          class="img-card1"
+          [src]="video.thumbnail"
+          alt="{{ video.title }}"
+        />
+      </div>
+      <h3>{{ video.title }}</h3>
+      <p>{{ video.description }}</p>
+      <div class="views">
+        <p *ngIf="video.views">Views: {{ video.views }}</p>
+        <p *ngIf="video.uploadedAt">
+          Uploaded At: {{ video.uploadedAt | date }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noFavorites>
+    <p>Você ainda não tem vídeos favoritos.</p>
+  </ng-template>
+</body>

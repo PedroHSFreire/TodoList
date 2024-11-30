@@ -1,0 +1,46 @@
+<header>
+  <div class="logo">
+    <h1>VOCE</h1>
+    <h1 class="tube">TUBE</h1>
+  </div>
+  <div class="menu-container">
+    <div (click)="toggleMenu()" class="header-buttons">
+      <h3>menu</h3>
+      <img
+        class="arrow"
+        [style.transform]="isRotated ? 'rotate(180deg)' : 'rotate(0deg)'"
+        [style.transition]="'transform 0.0s ease'"
+        (click)="toggleRotation()"
+        src="/assets/imagens/icons8-maior-que-100.png"
+      />
+    </div>
+    <div class="menu" *ngIf="isMenuOpen">
+      <button class="log" [routerLink]="['/profile']">Profile</button>
+      <button class="log" [routerLink]="['/Home']">Home</button>
+      <button class="logout" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</header>
+<body>
+  <div class="video-player">
+    <div *ngIf="selectedVideo; else notFound">
+      <div class="video-item" (click)="goToPlayer(selectedVideo)">
+        <img
+          class="iframe"
+          [src]="selectedVideo.thumbnail"
+          alt="{{ selectedVideo.title }}"
+        />
+        <h2>{{ selectedVideo.title }}</h2>
+        <p>{{ selectedVideo.description }}</p>
+      </div>
+      <div class="Infos">
+        <p>Views: {{ selectedVideo.views | number }}</p>
+        <p>Uploaded At: {{ selectedVideo.uploadedAt | date }}</p>
+      </div>
+    </div>
+
+    <ng-template #notFound>
+      <p>Vídeo não encontrado.</p>
+    </ng-template>
+  </div>
+</body>

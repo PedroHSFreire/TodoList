@@ -2,9 +2,9 @@
 <!--perfil-->
 <div class="container-header">
   <div class="div-bottons">
-    <button class="log" (click)="logout()">Logout</button>
     <button class="log" [routerLink]="['/Home']">Home</button>
-    <button class="log" [routerLink]="['/Categorias']">Categoria</button>
+    <button class="log" [routerLink]="['/Favoritos']">Favoritos</button>
+    <button class="logout" (click)="logout()">Logout</button>
   </div>
   <div class="profile">
     <img [src]="profile.picture" alt="{{ profile.name }}" />

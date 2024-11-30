@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   .description {
     margin-right: 6%;
@@ -79,9 +80,6 @@
   }
   p {
     text-align: center;
-  }
-  .div-fav {
-    margin-left: 25%;
   }
 }
 @media only screen and (min-width: 750px) {
@@ -165,9 +163,6 @@
   p {
     text-align: center;
   }
-  .div-fav {
-    margin-left: 30%;
-  }
 }
 @media only screen and (min-width: 1440px) {
   header {
@@ -185,25 +180,19 @@
   }
   iframe {
     border-radius: 20px;
+    width: 50%;
   }
   .video-player {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .description {
-    margin-right: 6%;
-  }
-  .description-txt {
-    font-size: 20px;
-  }
+
   .Infos {
     display: flex;
     gap: 300px;
   }
-  .no-video {
-    text-align: center;
-  }
+
   .menu-container {
     margin-left: 65%;
     position: absolute;
@@ -249,8 +238,5 @@
   }
   p {
     text-align: center;
-  }
-  .div-fav {
-    margin-left: 40%;
   }
 }

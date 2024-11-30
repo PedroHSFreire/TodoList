@@ -1,50 +1,54 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ApiService, Task } from '../service/api.service';
-import { debounceTime, switchMap } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+import { SearchStateService } from '../service/search-state.service';
+
 @Component({
-  selector: 'app-lista',
+  selector: 'app-Home',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  private searchSubject = new Subject<string>();
   users: any[] = [];
   videos: Task[] = [];
-  results: any[] = [];
-  searchPerformed = false;
+  searchQuery: string = '';
 
   constructor(
     public auth: AuthService,
     private apiService: ApiService,
-    private http: HttpClient,
-    private router: Router
-  ) {
-    /*pesquisa*/
-    this.searchSubject
-      .pipe(
-        debounceTime(300),
-        switchMap((query) => this.apiService.searchItems(query))
-      )
-      .subscribe((data) => {
-        this.results = data;
-        this.searchPerformed = true;
-      });
-  }
+    private router: Router,
+    private searchState: SearchStateService
+  ) {}
   /*pesquisa*/
-  onSearch(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    const query = input.value;
-    this.searchSubject.next(query);
+
+  search(): void {
+    if (this.searchQuery.trim()) {
+      this.searchState.setSearchQuery(this.searchQuery);
+      this.router.navigate(['/pesquisa']);
+    }
+  }
+  onInputChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.searchQuery = inputElement.value;
+  }
+
+  /*dropdown*/
+  ngOnInit(): void {
+    this.apiService.getUsers().subscribe((data) => {
+      this.users = data;
+      console.log('Users:', this.users);
+    });
+    this.apiService.getVideos().subscribe((data) => {
+      this.videos = data;
+    });
+    this.loadCounters();
   }
   /*dropdown*/
   isMenuOpen: boolean = false;
@@ -54,22 +58,6 @@ export class HomeComponent implements OnInit {
   isRotated: boolean = false;
   toggleRotation(): void {
     this.isRotated = !this.isRotated;
-  }
-  /*dropdown*/
-  ngOnInit(): void {
-    this.apiService.getUsers().subscribe((data) => {
-      this.users = data;
-      console.log('Users:', this.users);
-    });
-
-    this.apiService.getVideos().subscribe((data) => {
-      this.videos = data;
-      console.log('Videos:', this.videos);
-    });
-    this.apiService.getVideos().subscribe((data) => {
-      this.videos = data;
-    });
-    this.loadCounters();
   }
   playVideo(video: Task): void {
     this.incrementViews(video);

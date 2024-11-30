@@ -3,26 +3,57 @@
     <h1>VOCE</h1>
     <h1 class="tube">TUBE</h1>
   </div>
+  <div class="menu-container">
+    <div (click)="toggleMenu()" class="header-buttons">
+      <h3>menu</h3>
+      <img
+        class="arrow"
+        [style.transform]="isRotated ? 'rotate(180deg)' : 'rotate(0deg)'"
+        [style.transition]="'transform 0.0s ease'"
+        (click)="toggleRotation()"
+        src="/assets/imagens/icons8-maior-que-100.png"
+      />
+    </div>
+    <div class="menu" *ngIf="isMenuOpen">
+      <button class="log" [routerLink]="['/profile']">Profile</button>
+      <button class="log" [routerLink]="['/Home']">Home</button>
+      <button class="logout" (click)="logout()">Logout</button>
+    </div>
+  </div>
 </header>
-
-<div class="video-player" *ngIf="selectedVideo">
-  <iframe
-    *ngIf="getYouTubeEmbedUrl()"
-    [src]="getYouTubeEmbedUrl() | safeUrl"
-    width="640"
-    height="360"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-  ></iframe>
-  <div class="title">
-    <h2>{{ selectedVideo.title }}</h2>
+<body>
+  <div class="video-player" *ngIf="selectedVideo; else notFound">
+    <iframe
+      *ngIf="getYouTubeEmbedUrl()"
+      [src]="getYouTubeEmbedUrl() | safeUrl"
+      width="640"
+      height="360"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+    <div class="title">
+      <h2>{{ selectedVideo.title }}</h2>
+    </div>
+    <div class="description">
+      <p class="description-txt">{{ selectedVideo.description }}</p>
+    </div>
+    <div class="Infos">
+      <p>Views: {{ selectedVideo.views | number }}</p>
+      <p>Uploaded At: {{ selectedVideo.uploadedAt | date }}</p>
+    </div>
   </div>
-  <div class="Infos">
-    <p>Views: {{ selectedVideo.views | number }}</p>
-    <p>Uploaded At: {{ selectedVideo.uploadedAt | date }}</p>
+  <div class="div-fav">
+    <button class="log" *ngIf="!isFavorite" (click)="addToFavorites()">
+      Adicionar aos Favoritos
+    </button>
   </div>
-  <p>{{ selectedVideo.description }}</p>
-</div>
+  <p *ngIf="isFavorite">Este vídeo já está nos seus favoritos.</p>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <p *ngIf="!selectedVideo">Nenhum vídeo selecionado.</p>
+  <ng-template #notFound>
+    <p>Vídeo não encontrado.</p>
+  </ng-template>
+</body>
 
-<p *ngIf="!selectedVideo">Nenhum vídeo selecionado.</p>
+<!--teste-->

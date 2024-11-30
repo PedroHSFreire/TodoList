@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
 }
-@media only screen and (max-width: 445px) {
+@media only screen and (max-width: 480px) {
   /*header*/
   header {
     display: flex;
@@ -22,7 +22,25 @@
   p {
     font-family: "Inconsolata", monospace;
   }
-
+  .pesquisa {
+    margin-top: 10%;
+    margin-left: 20%;
+    position: absolute;
+  }
+  input {
+    width: 200px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+    padding: 0.3rem;
+  }
+  .search {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    background-color: red;
+    padding: 0.3rem;
+  }
   .menu-container {
     margin-left: 70%;
     position: absolute;
@@ -63,6 +81,7 @@
   /*section*/
   body {
     z-index: 1;
+    margin-top: 50px;
   }
   .Title {
     color: red;
@@ -129,8 +148,152 @@
     }
   }
 }
+@media only screen and (min-width: 768) {
+  /*header*/
+  header {
+    display: flex;
+  }
+  h1 {
+    display: flex;
+    font-family: "Inconsolata", monospace;
+  }
+  .tube {
+    color: red;
+    font-family: "Inconsolata", monospace;
+  }
+  h2 {
+    font-family: "Inconsolata", monospace;
+  }
+  p {
+    font-family: "Inconsolata", monospace;
+  }
+  .pesquisa {
+    margin-top: 10%;
+    margin-left: 20%;
+    position: absolute;
+  }
+  input {
+    width: 200px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+    padding: 0.3rem;
+  }
+  .search {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    background-color: red;
+    padding: 0.3rem;
+  }
+  .menu-container {
+    margin-left: 70%;
+    position: absolute;
+    cursor: pointer;
+  }
+  .header-buttons {
+    padding: 10px;
+    display: flex;
+  }
+  .menu {
+    position: relative;
+    width: 100px;
+    z-index: 2;
+  }
+  .arrow {
+    width: 20%;
+  }
+  .log {
+    margin-top: 10px;
+    padding: 1rem;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    background-color: red;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .logout {
+    margin-top: 10px;
+    padding: 1rem;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    background-color: grey;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  /*section*/
+  body {
+    z-index: 1;
+    margin-top: 50px;
+  }
+  .Title {
+    color: red;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    gap: 16px;
+  }
+  .img-card1 {
+    border-radius: 20px;
+  }
+  .img-card {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .video-card2 {
+    padding: 0.5rem;
+  }
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
 
-@media only screen and (min-width: 1440px) {
+    scroll-behavior: smooth;
+  }
+  .views {
+    display: flex;
+    gap: 20px;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 100;
+
+    &.prev-btn {
+      left: 10px;
+    }
+
+    &.next-btn {
+      right: 10px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
   /*header*/
   header {
     display: flex;
@@ -139,9 +302,7 @@
     display: flex;
     margin-left: 48%;
   }
-  .pesquisa {
-    margin-left: 20%;
-  }
+
   body {
     padding: 1rem;
   }
@@ -158,9 +319,8 @@
     margin-bottom: 1rem;
     text-align: center;
   }
-  .search-bar {
-    display: flex;
-    margin-left: 10%;
+  .pesquisa {
+    margin-left: 20%;
   }
   input {
     font-size: 16px;
@@ -171,7 +331,7 @@
     padding: 0.7rem;
     font-family: "Inconsolata", monospace;
   }
-  .search-button {
+  .search {
     padding: 0.7rem;
     background-color: red;
     border: none;
